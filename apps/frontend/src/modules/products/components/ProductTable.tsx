@@ -20,7 +20,7 @@ interface ProductTableProps {
   onDelete: (id: string) => void;
 }
 
-export function ProductTable({ products, sortBy, sortOrder, onSort, onDelete }: ProductTableProps) {
+export function ProductTable({ products, sortBy, onSort, onDelete }: ProductTableProps) {
   const SortableHeader = ({ field, children }: { field: string; children: React.ReactNode }) => (
     <Button
       variant="ghost"

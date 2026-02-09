@@ -32,14 +32,12 @@ function StatCard({
   value,
   subtitle,
   icon: Icon,
-  trend,
   color,
 }: {
   title: string;
   value: number | string;
   subtitle: string;
   icon: React.ElementType;
-  trend?: 'up' | 'down';
   color: 'blue' | 'green' | 'orange' | 'purple';
 }) {
   const colorClasses = {
@@ -114,7 +112,7 @@ function DashboardSkeleton() {
 }
 
 const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: { value: number }[]; label?: string }) => {
-  if (active && payload && payload.length) {
+  if (active && payload && payload.length && payload[0]) {
     return (
       <div className="bg-white px-4 py-2 shadow-lg rounded-lg border">
         <p className="font-medium">{label}</p>

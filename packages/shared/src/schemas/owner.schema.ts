@@ -7,4 +7,4 @@ export const ownerSchema = z.object({
   avatar: z.string().url().optional(),
 });
 
-export type Owner = z.infer<typeof ownerSchema>;
+export type OwnerSchema = z.infer<typeof ownerSchema>;
