@@ -6,11 +6,11 @@ A production-grade full-stack CRUD application for managing products and product
 
 | Dashboard | Products List |
 |-----------|---------------|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Products](docs/screenshots/products.png) |
+| ![Dashboard](project%20images/dashboard.png) | ![Products](project%20images/products.png) |
 
-| Product Form | Owners |
-|--------------|--------|
-| ![Form](docs/screenshots/form.png) | ![Owners](docs/screenshots/owners.png) |
+| Create Product | Owners |
+|----------------|--------|
+| ![Create Product](project%20images/create%20product.png) | ![Owners](project%20images/owners%20page.png) |
 
 ## Tech Stack
 
@@ -256,9 +256,22 @@ enum ProductStatus {
 6. **Authentication**: Not implemented (as per requirements)
 7. **Low Inventory**: Threshold set at < 10 units
 
+## Docker Deployment
+
+Run the entire stack with Docker:
+
+```bash
+docker-compose build
+docker-compose up -d
+```
+
+Services:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:3001
+- PostgreSQL: localhost:5434
+
 ## Future Improvements
 
-- [ ] Full Docker deployment (in progress)
 - [ ] Unit and integration tests
 - [ ] Authentication and authorization
 - [ ] Bulk operations (import/export CSV)

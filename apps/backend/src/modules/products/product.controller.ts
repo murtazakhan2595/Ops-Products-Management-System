@@ -26,7 +26,7 @@ class ProductController {
 
   async getProductById(req: Request, res: Response, next: NextFunction) {
     try {
-      const product = await productService.getProductById(req.params.id!);
+      const product = await productService.getProductById(req.params.id as string);
       sendSuccess(res, product);
     } catch (error) {
       next(error);
@@ -44,7 +44,7 @@ class ProductController {
 
   async updateProduct(req: Request, res: Response, next: NextFunction) {
     try {
-      const product = await productService.updateProduct(req.params.id!, req.body);
+      const product = await productService.updateProduct(req.params.id as string, req.body);
       sendSuccess(res, product);
     } catch (error) {
       next(error);
@@ -53,7 +53,7 @@ class ProductController {
 
   async deleteProduct(req: Request, res: Response, next: NextFunction) {
     try {
-      await productService.deleteProduct(req.params.id!);
+      await productService.deleteProduct(req.params.id as string);
       sendSuccess(res, null, 204);
     } catch (error) {
       next(error);

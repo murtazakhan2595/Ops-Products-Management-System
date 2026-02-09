@@ -14,7 +14,7 @@ class OwnerController {
 
   async getOwnerById(req: Request, res: Response, next: NextFunction) {
     try {
-      const owner = await ownerService.getOwnerById(req.params.id!);
+      const owner = await ownerService.getOwnerById(req.params.id as string);
       sendSuccess(res, owner);
     } catch (error) {
       next(error);
@@ -25,7 +25,7 @@ class OwnerController {
     try {
       const { page = 1, limit = 10 } = req.query;
       const { products, meta } = await ownerService.getProductsByOwner(
-        req.params.id!,
+        req.params.id as string,
         Number(page),
         Number(limit)
       );
